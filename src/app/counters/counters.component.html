@@ -1,22 +1,6 @@
 <div>
-  <div class="box">
-    <div class="status">DEL</div>
-    <div class="count">92342316</div>
-  </div>
-  <div class="box">
-    <div class="status">DEL</div>
-    <div class="count">923</div>
-  </div>
-  <div class="box">
-    <div class="status">DEL</div>
-    <div class="count">9</div>
-  </div>
-  <div class="box">
-    <div class="status">DEL</div>
-    <div class="count">9234</div>
-  </div>
-  <div class="box">
-    <div class="status">DEL</div>
-    <div class="count">92342</div>
+  <div *ngFor="let counter of countData" class="box">
+    <div class="status">{{counter[0]}}</div>
+    <div class="count">{{counter[1]}}</div>
   </div>
 </div>

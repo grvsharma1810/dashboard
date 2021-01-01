@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-counters',
   templateUrl: './counters.component.html',
   styleUrls: ['./counters.component.css']
 })
-export class CountersComponent implements OnInit {
+export class CountersComponent {
+
+  @Input() countData;
 
   constructor() { }
-
-  ngOnInit() {
-
-  }
 
 }

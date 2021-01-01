@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {error, log} from "util";
 
 @Component({
   selector: 'app-root',
@@ -15,6 +14,8 @@ export class AppComponent implements OnInit{
   title = 'dashboard';
   loadingData = true;
 
+  count = [];
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -25,11 +26,29 @@ export class AppComponent implements OnInit{
     this.http.post<any>(this.baseUrl, {"email": "gs8280601@gmail.com"}, {headers: headers})
       .toPromise()
       .then(response => {
-        console.log(response)
+        this.shipmentData = response;
+        this.calculateStatusCodeAndCount()
         this.loadingData = false;
       })
       .catch(error => {
-        alert("Some Error Occurred")
+        alert("Some Error Occurred");
+        console.log(error);
       })
   }
+
+  calculateStatusCodeAndCount() {
+    let status_codes = [];
+    this.shipmentData.forEach(shipment => {
+      if (!status_codes.includes(shipment['current_status_code'])) {
+        status_codes.push(shipment['current_status_code']);
+      }
+    });
+    status_codes.forEach(code => {
+      let count = this.shipmentData.filter(shipment => shipment['current_status_code'] === code).length
+      this.count.push([code, count]);
+    });
+    console.log(this.count)
+  };
+
+
 }
