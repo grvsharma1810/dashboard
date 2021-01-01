@@ -8,7 +8,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class CountersComponent implements OnInit {
 
-  constructor(private http : HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
 

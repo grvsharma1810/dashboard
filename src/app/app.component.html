@@ -1,4 +1,14 @@
 <!--<router-outlet></router-outlet>-->
 <app-navbar></app-navbar>
 <div style="height: 40px"></div>
-<app-counters></app-counters>
+<div *ngIf="loadingData" style="display: flex; align-items: center;flex-direction: column">
+  <div class="loader"></div>
+  <div>Loading Shipment Data..</div>
+</div>
+<div *ngIf="!loadingData">
+  <app-counters></app-counters>
+</div>
+
+
+
+
