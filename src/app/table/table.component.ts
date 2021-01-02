@@ -16,7 +16,19 @@ export class TableComponent implements OnInit {
   }
 
   getDate(date) {
-    return new Date(date).toLocaleString().split(',')[0];
+    if (date === undefined || date == null || date === ""){
+      return "NA";
+    } else {
+      return new Date(date).toLocaleString().split(',')[0];
+    }
+  }
+
+  getColData(colData) {
+    if (colData === undefined || colData == null || colData === ""){
+      return "NA";
+    } else {
+      return colData;
+    }
   }
 
 }

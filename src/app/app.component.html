@@ -7,7 +7,7 @@
 
 <app-counters [countData]="statusCodeCount" (selectedStatus)="getFilteredTableData($event)"></app-counters>
 
-<div *ngIf="!loadingData" class="row" style="margin-left: 10px">
+<div *ngIf="!loadingData" class="row" style="margin-left: 10px;margin-bottom: 10px">
   <div class="col-md-3">
     <app-timeline></app-timeline>
   </div>

@@ -1,5 +1,5 @@
-<div style="margin-left: 10px;padding:10px;border: 1px solid lightgray">
-  <table style="width:100%" class="gfg">
+<div style="margin-left: 10px;padding:0 10px 10px 10px;border: 1px solid lightgray">
+  <table style="width:100%" class="customTable">
     <thead>
       <tr>
         <th>AWB NUMBER</th>
@@ -14,14 +14,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let row of tableData" class="rows">
-        <td class="firstCol">#{{row.awbno}}</td>
+        <td class="firstCol">#{{getColData(row.awbno)}}</td>
         <td class="midCol">{{row.carrier}}</td>
         <td class="midCol">{{row.from}}</td>
         <td class="midCol">{{row.to}}</td>
         <td class="midCol">{{row.carrier}}</td>
         <td class="midCol">{{getDate(row.pickup_date)}}</td>
         <td class="midCol">{{getDate(row.extra_fields.expected_delivery_date)}}</td>
-        <td class="lastCol">{{row.current_status}}</td>
+        <td class="lastCol" [ngStyle]="row.current_status == 'Delivered' ? {'color' : 'green'} : {'color' : 'red'}">{{row.current_status}}</td>
       </tr>
     </tbody>
   </table>
