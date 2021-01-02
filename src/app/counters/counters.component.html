@@ -1,5 +1,5 @@
 
-<div>
+<div style="margin-bottom: 20px;margin-top: 20px">
   <div *ngFor="let counter of countData" class="box" (click)="select(counter)"
        [ngStyle]="counter[0]==selectedStatusCode ? {'background-color':'blue','color' : 'white'} : {'background-color': 'lightblue'}">
     <div class="status">{{counter[0]}}</div>
