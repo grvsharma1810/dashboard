@@ -1,24 +1,28 @@
 <div style="margin-left: 10px;padding:10px;border: 1px solid lightgray">
-  <table style="width:100%">
-    <tr>
-      <th>AWB NUMBER</th>
-      <th>TRANSPORTER</th>
-      <th>SOURCE</th>
-      <th>DESTINATION</th>
-      <th>BRAND</th>
-      <th>START DATE</th>
-      <th>ETD</th>
-      <th>STATUS</th>
-    </tr>
-    <tr *ngFor="let row of tableData">
-      <td>#{{row.awbno}}</td>
-      <td>{{row.carrier}}</td>
-      <td>{{row.from}}</td>
-      <td>{{row.to}}</td>
-      <td>{{row.carrier}}</td>
-      <td>{{getDate(row.pickup_date)}}</td>
-      <td>{{getDate(row.extra_fields.expected_delivery_date)}}</td>
-      <td>{{row.current_status}}</td>
-    </tr>
+  <table style="width:100%" class="gfg">
+    <thead>
+      <tr>
+        <th>AWB NUMBER</th>
+        <th>TRANSPORTER</th>
+        <th>SOURCE</th>
+        <th>DESTINATION</th>
+        <th>BRAND</th>
+        <th>START DATE</th>
+        <th>ETD</th>
+        <th>STATUS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData" class="rows">
+        <td class="firstCol">#{{row.awbno}}</td>
+        <td class="midCol">{{row.carrier}}</td>
+        <td class="midCol">{{row.from}}</td>
+        <td class="midCol">{{row.to}}</td>
+        <td class="midCol">{{row.carrier}}</td>
+        <td class="midCol">{{getDate(row.pickup_date)}}</td>
+        <td class="midCol">{{getDate(row.extra_fields.expected_delivery_date)}}</td>
+        <td class="lastCol">{{row.current_status}}</td>
+      </tr>
+    </tbody>
   </table>
 </div>
