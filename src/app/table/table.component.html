@@ -13,7 +13,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of tableData" class="rows" (click)="select(row)">
+      <tr *ngFor="let row of tableData" class="rows" (click)="select(row)"
+          [ngStyle]="row==selectedRow ? {'background-color':'lightgray'} : {'background-color': 'white'}">
         <td class="firstCol">#{{getColData(row.awbno)}}</td>
         <td class="midCol">{{row.carrier}}</td>
         <td class="midCol">{{row.from}}</td>

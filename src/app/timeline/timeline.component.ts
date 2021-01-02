@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
-  @Input() scan;
+  @Input() scan = null;
 
   constructor() { }
 
@@ -29,7 +29,7 @@ export class TimelineComponent implements OnInit {
     if (mm<10) {
       mm = '0'+mm;
     }
-    currDate = mm+'-'+dd+'-'+yyyy;
+    currDate = dd+'-'+mm+'-'+yyyy;
     return currDate
   }
 

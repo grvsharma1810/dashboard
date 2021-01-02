@@ -1,5 +1,5 @@
-<div style="border: 1px solid lightgray;padding: 5px">
-  <div class="timeline">
+<div style="border: 1px solid lightgray;padding: 5px;">
+  <div class="timeline" *ngIf="scan">
     <div style="z-index: 1">
       <img src="../../assets/destination.svg" alt="Destination" style="width: 30px;height: 30px;
           background-color: lightgray;border-radius: 50%;padding: 5px;">
@@ -10,7 +10,7 @@
           width: 10px;height: 10px;background-color: blue;
             box-shadow:0 0 2px 3px skyblue;"></div>
         <div style="width: 35px;height: 1.5px;background-color: blue"></div>
-        <div class="status">
+        <div class="status" [ngStyle]="status.status_detail == 'DELIVERED' ? {'background-color' : 'lightgray','color':'green'} : {'background-color' : 'white'}" >
           <div style="margin-right: 5px;">{{status.location}}</div>
           <div style="margin-left: 5px;display: flex;justify-content: space-between">
             <div style="margin-right: 5px">{{getDate(status.time)}}</div>
@@ -23,5 +23,8 @@
       <img src="../../assets/warehouse.svg" alt="Destination" style="width: 30px;height: 30px;
           background-color: lightgray;border-radius: 50%;padding: 5px;z-index: 1">
     </div>
+  </div>
+  <div *ngIf="!scan" style="text-align: center">
+    <span style="font-size: large">No Shipment Selected</span>
   </div>
 </div>

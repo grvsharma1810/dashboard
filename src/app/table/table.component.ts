@@ -10,6 +10,8 @@ export class TableComponent implements OnInit {
   @Input() tableData;
   @Output() shipment = new EventEmitter<boolean>();
 
+  selectedRow = null;
+
   constructor() { }
 
   ngOnInit() {
@@ -33,6 +35,7 @@ export class TableComponent implements OnInit {
   }
 
   select(row) {
+    this.selectedRow = row;
     this.shipment.emit(row.scan);
   }
 
