@@ -1,14 +1,22 @@
 <!--<router-outlet></router-outlet>-->
 <app-navbar></app-navbar>
-<div style="height: 40px"></div>
+<div style="height: 30px"></div>
 <div *ngIf="loadingData" style="display: flex; align-items: center;flex-direction: column">
   <div class="loader"></div>
   <div>Loading Shipment Data..</div>
 </div>
 <div *ngIf="!loadingData">
-  <app-counters [countData]="count"></app-counters>
+  <div>
+    <app-counters [countData]="statusCodeCount" (selectedStatus)="getFilteredTableData($event)"></app-counters>
+  </div>
+  <div style="height: 20px"></div>
+  <div class="row">
+    <div class="col-md-4 customBox">
+      <app-timeline></app-timeline>
+    </div>
+    <div class="col-md-8 customBox">
+      <app-table [tableData]="filteredShipmentData"></app-table>
+    </div>
+  </div>
+
 </div>
-
-
-
-

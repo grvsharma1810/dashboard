@@ -1,5 +1,7 @@
+
 <div>
-  <div *ngFor="let counter of countData" class="box">
+  <div *ngFor="let counter of countData" class="box" (click)="select(counter)"
+       [ngStyle]="counter[0]==selectedStatusCode ? {'background-color':'blue','color' : 'white'} : {'background-color': 'lightblue'}">
     <div class="status">{{counter[0]}}</div>
     <div class="count">{{counter[1]}}</div>
   </div>

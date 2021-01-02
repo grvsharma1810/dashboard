@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-counters',
@@ -8,7 +8,14 @@ import {Component, Input} from '@angular/core';
 export class CountersComponent {
 
   @Input() countData;
+  @Output() selectedStatus = new EventEmitter<boolean>();
+  selectedStatusCode = "DEL" ;    // by default
 
   constructor() { }
+
+  select(status) {
+    this.selectedStatusCode = status[0];
+    this.selectedStatus.emit(status[0]);
+  }
 
 }

@@ -9,12 +9,13 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 export class AppComponent implements OnInit{
 
   shipmentData: any;
+  filteredShipmentData: any;
   private baseUrl = 'https://f0ztti2nsk.execute-api.ap-south-1.amazonaws.com/v1/consignment/fetch';
   auth_token = 'tTU3gFVUdP';
   title = 'dashboard';
   loadingData = true;
 
-  count = [];
+  statusCodeCount = [];
 
   constructor(private http: HttpClient) { }
 
@@ -27,7 +28,8 @@ export class AppComponent implements OnInit{
       .toPromise()
       .then(response => {
         this.shipmentData = response;
-        this.calculateStatusCodeAndCount()
+        this.calculateStatusCodeAndCount();
+        this.getFilteredTableData("DEL");
         this.loadingData = false;
       })
       .catch(error => {
@@ -45,10 +47,13 @@ export class AppComponent implements OnInit{
     });
     status_codes.forEach(code => {
       let count = this.shipmentData.filter(shipment => shipment['current_status_code'] === code).length
-      this.count.push([code, count]);
+      this.statusCodeCount.push([code, count]);
     });
-    console.log(this.count)
+    console.log(this.statusCodeCount)
   };
 
+  getFilteredTableData(currentStatusCode) {
+    this.filteredShipmentData = this.shipmentData.filter(shipment => shipment['current_status_code'] === currentStatusCode);
+  }
 
 }
