@@ -1,4 +1,4 @@
-<div style="margin-left: 10px;padding:0 10px 10px 10px;border: 1px solid lightgray">
+<div style="padding:0 10px 10px 10px;border: 1px solid lightgray">
   <table style="width:100%" class="customTable">
     <thead>
       <tr>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of tableData" class="rows">
+      <tr *ngFor="let row of tableData" class="rows" (click)="select(row)">
         <td class="firstCol">#{{getColData(row.awbno)}}</td>
         <td class="midCol">{{row.carrier}}</td>
         <td class="midCol">{{row.from}}</td>

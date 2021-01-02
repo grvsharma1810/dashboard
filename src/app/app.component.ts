@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
   loadingData = true;
 
   statusCodeCount = [];
+  selectedShipment;
 
   constructor(private http: HttpClient) { }
 

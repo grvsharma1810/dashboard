@@ -39,7 +39,7 @@ th{
 .customTable tbody{
   display:block;
   overflow:auto;
-  height:260px;
+  height:300px;
   width:100%;
 }
 .customTable thead tr{

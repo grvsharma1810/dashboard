@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TableComponent implements OnInit {
 
   @Input() tableData;
+  @Output() shipment = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -29,6 +30,10 @@ export class TableComponent implements OnInit {
     } else {
       return colData;
     }
+  }
+
+  select(row) {
+    this.shipment.emit(row.scan);
   }
 
 }

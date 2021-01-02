@@ -1,20 +1,27 @@
-<div style="margin-right: 10px;border: 1px solid lightgray;padding: 5px">
+<div style="border: 1px solid lightgray;padding: 5px">
   <div class="timeline">
-    <img src="../../assets/destination.svg" alt="Destination" style="width: 30px;height: 30px;
-          background-color: lightgray;border-radius: 50%;padding: 5px">
-<!--    <div class="databox">-->
-<!--      <div class="">-->
-<!--        <h2>2017</h2>-->
-<!--        <p>Lorem ipsum..</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="databox">-->
-<!--      <div class="contentt">-->
-<!--        <h2>2016</h2>-->
-<!--        <p>Lorem ipsum..</p>-->
-<!--      </div>-->
-<!--    </div>-->
-    <img src="../../assets/warehouse.svg" alt="Destination" style="width: 30px;height: 30px;
-          background-color: lightgray;border-radius: 50%;padding: 5px">
+    <div style="z-index: 1">
+      <img src="../../assets/destination.svg" alt="Destination" style="width: 30px;height: 30px;
+          background-color: lightgray;border-radius: 50%;padding: 5px;">
+    </div>
+    <div class="data">
+      <div class="statusBox" *ngFor="let status of scan">
+        <div style="border: 1px solid blue;border-radius: 50%;
+          width: 10px;height: 10px;background-color: blue;
+            box-shadow:0 0 2px 3px skyblue;"></div>
+        <div style="width: 35px;height: 1.5px;background-color: blue"></div>
+        <div class="status">
+          <div style="margin-right: 5px;">{{status.location}}</div>
+          <div style="margin-left: 5px;display: flex;justify-content: space-between">
+            <div style="margin-right: 5px">{{getDate(status.time)}}</div>
+            <div style="margin-left: 5px">{{getTime(status.time)}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="z-index: 1">
+      <img src="../../assets/warehouse.svg" alt="Destination" style="width: 30px;height: 30px;
+          background-color: lightgray;border-radius: 50%;padding: 5px;z-index: 1">
+    </div>
   </div>
 </div>

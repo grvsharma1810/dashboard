@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-size: 11px;
 }
 
 .timeline {
@@ -7,3 +8,27 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.data{
+  border-left: 2px dashed blue;
+  margin-left: 13px;
+  padding-right: 5px;
+  /*position: absolute;*/
+  z-index: 0.5;
+}
+
+.status{
+  border: 0.5px solid lightgray;
+  width: 100%;
+  padding: 8px 5px 8px 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.statusBox{
+  display: flex;
+  align-items: center;
+  margin-left: -5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
