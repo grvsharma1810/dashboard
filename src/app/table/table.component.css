@@ -64,3 +64,9 @@ th{
 ::-webkit-scrollbar-thumb:hover {
   background: darkblue;
 }
+
+@media (max-width: 600px) {
+  .customTable{
+    margin-top: 20px;
+  }
+}

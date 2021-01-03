@@ -26,3 +26,13 @@ div {
 .count{
   font-size: 200%;
 }
+
+@media (max-width: 600px) {
+  div{
+    flex-direction: column;
+    align-items: center;
+  }
+  .box{
+    margin-bottom: 10px;
+  }
+}
