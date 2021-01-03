@@ -21,7 +21,8 @@
         <td class="midCol">{{row.to}}</td>
         <td class="midCol">{{row.carrier}}</td>
         <td class="midCol">{{getDate(row.pickup_date)}}</td>
-        <td class="midCol">{{getDate(row.extra_fields.expected_delivery_date)}}</td>
+        <td *ngIf="row.extra_fields!=null" class="midCol">{{getDate(row.extra_fields.expected_delivery_date)}}</td>
+        <td *ngIf="row.extra_fields==null" class="midCol">NA</td>
         <td class="lastCol" [ngStyle]="row.current_status == 'Delivered' ? {'color' : 'green'} : {'color' : 'red'}">{{row.current_status}}</td>
       </tr>
     </tbody>

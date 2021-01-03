@@ -15,11 +15,10 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.tableData)
   }
 
   getDate(date) {
-    if (date === undefined || date == null || date === ""){
+    if (date == undefined || date == null || date == "") {
       return "NA";
     } else {
       return new Date(date).toLocaleString().split(',')[0];
@@ -27,7 +26,7 @@ export class TableComponent implements OnInit {
   }
 
   getColData(colData) {
-    if (colData === undefined || colData == null || colData === ""){
+    if (colData == undefined || colData == null || colData == "") {
       return "NA";
     } else {
       return colData;
@@ -35,6 +34,7 @@ export class TableComponent implements OnInit {
   }
 
   select(row) {
+    console.log(row);
     this.selectedRow = row;
     this.shipment.emit(row.scan);
   }
