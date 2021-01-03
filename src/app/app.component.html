@@ -9,7 +9,7 @@
 
 <div *ngIf="!loadingData" class="row" style="margin-left: 10px;margin-bottom: 10px">
   <div class="col-md-4">
-    <app-timeline [scan]="selectedShipment"></app-timeline>
+    <app-timeline [shipment]="selectedShipment"></app-timeline>
   </div>
   <div class="col-md-8">
     <app-table [tableData]="filteredShipmentData" (shipment)="selectedShipment = $event"></app-table>

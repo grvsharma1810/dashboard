@@ -1,8 +1,11 @@
 <div style="padding:0 10px 10px 10px;border: 1px solid lightgray">
   <table style="width:100%" class="customTable">
-    <thead>
+    <thead style="font-size: 11px">
       <tr>
-        <th>AWB NUMBER</th>
+        <th>
+          AWB NUMBER
+          <span><img style="width: 15px" src="../../assets/keyboard_arrow_down-black-18dp.svg" alt=""></span>
+        </th>
         <th>TRANSPORTER</th>
         <th>SOURCE</th>
         <th>DESTINATION</th>
@@ -16,10 +19,10 @@
       <tr *ngFor="let row of tableData" class="rows" (click)="select(row)"
           [ngStyle]="row==selectedRow ? {'background-color':'lightgray'} : {'background-color': 'white'}">
         <td class="firstCol">#{{getColData(row.awbno)}}</td>
-        <td class="midCol">{{row.carrier}}</td>
-        <td class="midCol">{{row.from}}</td>
-        <td class="midCol">{{row.to}}</td>
-        <td class="midCol">{{row.carrier}}</td>
+        <td class="midCol">{{getColData(row.carrier)}}</td>
+        <td class="midCol">{{getColData(row.from)}}</td>
+        <td class="midCol">{{getColData(row.to)}}</td>
+        <td class="midCol">{{getColData(row.carrier)}}</td>
         <td class="midCol">{{getDate(row.pickup_date)}}</td>
         <td *ngIf="row.extra_fields!=null" class="midCol">{{getDate(row.extra_fields.expected_delivery_date)}}</td>
         <td *ngIf="row.extra_fields==null" class="midCol">NA</td>

@@ -7,12 +7,12 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
-  @Input() scan = null;
+  @Input() shipment = null;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.scan);
+    console.log(this.shipment);
   }
 
   getDate(date) {

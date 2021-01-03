@@ -50,7 +50,6 @@ export class AppComponent implements OnInit{
       let count = this.shipmentData.filter(shipment => shipment['current_status_code'] === code).length
       this.statusCodeCount.push([code, count]);
     });
-    console.log(this.statusCodeCount)
   };
 
   getFilteredTableData(currentStatusCode) {

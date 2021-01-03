@@ -34,9 +34,8 @@ export class TableComponent implements OnInit {
   }
 
   select(row) {
-    console.log(row);
     this.selectedRow = row;
-    this.shipment.emit(row.scan);
+    this.shipment.emit(row);
   }
 
 }
